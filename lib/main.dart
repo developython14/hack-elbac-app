@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: Screnn(),
     );
   }
 }
@@ -78,18 +78,12 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-
-import 'package:flutter/material.dart';
-import 'package:flutter_windowmanager/flutter_windowmanager.dart';
-
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
+class Screnn extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _ScrennState createState() => _ScrennState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _ScrennState extends State<Screnn> {
   bool _secureMode = false;
 
   @override
