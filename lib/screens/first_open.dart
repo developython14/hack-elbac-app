@@ -12,7 +12,9 @@ class First_open extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (context.read<device_infos>().status == 'completed') {}
+    if (context.read<device_infos>().status == 'completed') {
+      Navigator.pushNamed(context, '/home');
+    }
     return Scaffold(
       body: Center(
         child: Text('hi'),

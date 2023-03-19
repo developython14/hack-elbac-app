@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/first_open',
       routes: {
         '/first_open': (context) => First_open(),
+        '/home': (context) => Home(),
       },
     );
   }
