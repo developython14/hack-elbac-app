@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:hackelbac/providers/devices_info.dart';
 import 'package:hackelbac/screens/first_open.dart';
@@ -48,45 +49,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/first_open',
       routes: {
-        '/': (context) => SplashScreen(),
         '/first_open': (context) => First_open(),
       },
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  String _platformID = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('hackelbac prototype'),
-      ),
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('unique data of devices Infos' +
-                context.read<userdata>().username),
-            Text(_platformID)
-          ],
-        ),
-      ),
     );
   }
 }
