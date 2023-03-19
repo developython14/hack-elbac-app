@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:provider/provider.dart';
+import 'providers/user_info.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,9 @@ class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [],
+      providers: [
+        ChangeNotifierProvider(create: (_) => userdata()),
+      ],
       child: MyApp(),
     );
   }
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'HackElbac',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -40,7 +43,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Screnn(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+      },
     );
   }
 }
