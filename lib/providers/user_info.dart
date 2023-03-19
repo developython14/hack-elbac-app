@@ -7,12 +7,13 @@ enum Status { Authenticated, Unauthenticated }
 
 class userdata with ChangeNotifier, DiagnosticableTreeMixin {
   String _id = 'id';
-  String _username = 'username';
+  String _username = 'mustapha developper';
   String _email = 'username';
   String _userimage = 'id';
   String _role = 'id';
   String _password = 'pass';
   Status logging = Status.Unauthenticated;
+  String device_mac = 'fr';
 
   String get username => _username;
   String get password => _password;
@@ -23,6 +24,11 @@ class userdata with ChangeNotifier, DiagnosticableTreeMixin {
 
   void change_id(id) {
     _id = id;
+    notifyListeners();
+  }
+
+  void change_mac(adresse) {
+    device_mac = adresse;
     notifyListeners();
   }
 

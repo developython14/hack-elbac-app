@@ -4,9 +4,10 @@ import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:provider/provider.dart';
 import 'providers/user_info.dart';
+import 'package:hackelbac/screens/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Start());
 }
 
 class Start extends StatelessWidget {
@@ -76,7 +77,11 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('unique data of devices Infos'), Text(_platformID)],
+          children: [
+            Text('unique data of devices Infos' +
+                context.read<userdata>().username),
+            Text(_platformID)
+          ],
         ),
       ),
     );
