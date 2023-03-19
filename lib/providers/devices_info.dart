@@ -9,7 +9,8 @@ class device_infos with ChangeNotifier, DiagnosticableTreeMixin {
   String device_mac = 'fr';
   String status = 'idle';
 
-  void change_mac(adresse) async {
+  void change_mac() async {
+    print('function called suucesfly');
     status = 'loading';
     String id = await initPlatformState();
     device_mac = id;
