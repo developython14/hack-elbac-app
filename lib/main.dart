@@ -10,6 +10,9 @@ import 'package:hackelbac/screens/home.dart';
 
 void main() {
   runApp(const Start());
+  WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  });
 }
 
 class Start extends StatelessWidget {
@@ -52,52 +55,6 @@ class MyApp extends StatelessWidget {
         '/first_open': (context) => First_open(),
         '/home': (context) => Home(),
       },
-    );
-  }
-}
-
-class Screnn extends StatefulWidget {
-  @override
-  _ScrennState createState() => _ScrennState();
-}
-
-class _ScrennState extends State<Screnn> {
-  bool _secureMode = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text('Secure Mode: ${_secureMode.toString()}\n'),
-              ElevatedButton(
-                  onPressed: () async {
-                    final secureModeToggle = !_secureMode;
-
-                    if (secureModeToggle == true) {
-                      await FlutterWindowManager.addFlags(
-                          FlutterWindowManager.FLAG_SECURE);
-                    } else {
-                      await FlutterWindowManager.clearFlags(
-                          FlutterWindowManager.FLAG_SECURE);
-                    }
-
-                    setState(() {
-                      _secureMode = !_secureMode;
-                    });
-                  },
-                  child: const Text("Toggle Secure Mode")),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

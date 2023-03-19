@@ -14,7 +14,16 @@ class First_open extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (context.watch<device_infos>().status == 'completed') {
-      Navigator.pushNamed(context, '/home');
+      return Scaffold(
+        body: Center(
+          child: ElevatedButton(
+            child: Text('fd'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            },
+          ),
+        ),
+      );
     }
     context.read<device_infos>().change_mac();
     return Scaffold(
