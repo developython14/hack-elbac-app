@@ -2,9 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+class Start extends StatelessWidget {
+  const Start({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [],
+      child: MyApp(),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
