@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:hackelbac/providers/devices_info.dart';
+import 'package:hackelbac/screens/first_open.dart';
 import 'package:provider/provider.dart';
 import 'providers/user_info.dart';
 import 'package:hackelbac/screens/home.dart';
@@ -18,6 +19,7 @@ class Start extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => userdata()),
+        ChangeNotifierProvider(create: (_) => device_infos()),
       ],
       child: MyApp(),
     );
@@ -44,9 +46,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/first_open',
       routes: {
         '/': (context) => SplashScreen(),
+        '/first_open': (context) => First_open(),
       },
     );
   }
@@ -85,20 +88,6 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ),
     );
-  }
-
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    try {
-      platformVersion = await GetMac.macAddress;
-    } on PlatformException {
-      platformVersion = 'Failed to get Device MAC Address.';
-    }
-    print("MAC-: " + platformVersion);
-    if (!mounted) return;
-    setState(() {
-      _platformID = platformVersion;
-    });
   }
 }
 
