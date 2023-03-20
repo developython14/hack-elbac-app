@@ -12,7 +12,7 @@ import 'package:hackelbac/screens/home.dart';
 void main() {
   runApp(const Start());
   WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+    await FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
   });
 }
 

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
 import 'package:get_mac/get_mac.dart';
-import 'package:device_information/device_information.dart';
 
 class device_infos with ChangeNotifier, DiagnosticableTreeMixin {
   String device_mac = 'fr';
