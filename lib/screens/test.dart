@@ -11,6 +11,7 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:android_multiple_identifier/android_multiple_identifier.dart';
 
 class freefire extends StatefulWidget {
   const freefire({Key? key}) : super(key: key);
@@ -31,6 +32,9 @@ class _MyAppState extends State<freefire> {
 
   Future<void> initPlatformState() async {
     var deviceData = <String, dynamic>{};
+    await AndroidMultipleIdentifier.requestPermission();
+    String imei = await AndroidMultipleIdentifier.imeiCode;
+    print(imei);
 
     try {
       if (kIsWeb) {
