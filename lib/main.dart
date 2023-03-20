@@ -4,6 +4,7 @@ import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:hackelbac/providers/devices_info.dart';
 import 'package:hackelbac/screens/first_open.dart';
+import 'package:hackelbac/screens/test.dart';
 import 'package:provider/provider.dart';
 import 'providers/user_info.dart';
 import 'package:hackelbac/screens/home.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/first_open',
       routes: {
-        '/first_open': (context) => First_open(),
+        '/first_open': (context) => freefire(),
         '/home': (context) => Home(),
       },
     );
