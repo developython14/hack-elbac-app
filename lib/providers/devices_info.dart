@@ -10,9 +10,10 @@ class device_infos with ChangeNotifier, DiagnosticableTreeMixin {
   String status = 'idle';
 
   void change_mac() async {
-    print('function called suucesfly');
     status = 'loading';
     String id = await initPlatformState();
+    print('hada howa lid');
+    print(id);
     device_mac = id;
     status = 'completed';
     notifyListeners();

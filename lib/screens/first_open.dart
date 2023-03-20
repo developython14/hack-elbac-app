@@ -17,7 +17,7 @@ class First_open extends StatelessWidget {
       return Scaffold(
         body: Center(
           child: ElevatedButton(
-            child: Text('fd'),
+            child: Text(context.watch<device_infos>().device_mac),
             onPressed: () {
               Navigator.pushNamed(context, '/home');
             },
