@@ -23,6 +23,7 @@ class freefire extends StatefulWidget {
 class _MyAppState extends State<freefire> {
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
   Map<String, dynamic> _deviceData = <String, dynamic>{};
+  String ref = 'salam';
 
   @override
   void initState() {
@@ -33,8 +34,6 @@ class _MyAppState extends State<freefire> {
   Future<void> initPlatformState() async {
     var deviceData = <String, dynamic>{};
     await AndroidMultipleIdentifier.requestPermission();
-    String imei = await AndroidMultipleIdentifier.imeiCode;
-    print(imei);
 
     try {
       if (kIsWeb) {
