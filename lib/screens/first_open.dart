@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:hackelbac/providers/devices_info.dart';
 import 'package:provider/provider.dart';
@@ -26,11 +24,31 @@ class _startState extends State<start> {
         child: Column(
           children: [
             Text('actions'),
-            ElevatedButton(onPressed: () {}, child: Text('to general_data')),
-            ElevatedButton(onPressed: () {}, child: Text('to device_data')),
-            ElevatedButton(onPressed: () {}, child: Text('to test_mac')),
-            ElevatedButton(onPressed: () {}, child: Text('to test_safe')),
-            ElevatedButton(onPressed: () {}, child: Text('to test_imei')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/general_data');
+                },
+                child: Text('to general_data')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/device_data');
+                },
+                child: Text('to device_data')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/test_mac');
+                },
+                child: Text('to test_mac')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/test_safe');
+                },
+                child: Text('to test_safe')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/test_imei');
+                },
+                child: Text('to test_imei')),
           ],
         ),
       ),

@@ -42,6 +42,7 @@ dependencies:
   android_multiple_identifier: ^1.0.3
   safe_device: ^1.1.2
   location_permissions: ^3.0.0
+  mac_address: ^1.0.0
 
 
 dev_dependencies:
