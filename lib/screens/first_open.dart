@@ -26,6 +26,11 @@ class _startState extends State<start> {
         child: Column(
           children: [
             Text('actions'),
+            ElevatedButton(onPressed: () {}, child: Text('to general_data')),
+            ElevatedButton(onPressed: () {}, child: Text('to device_data')),
+            ElevatedButton(onPressed: () {}, child: Text('to test_mac')),
+            ElevatedButton(onPressed: () {}, child: Text('to test_safe')),
+            ElevatedButton(onPressed: () {}, child: Text('to test_imei')),
           ],
         ),
       ),
