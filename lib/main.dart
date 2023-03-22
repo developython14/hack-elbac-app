@@ -55,6 +55,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/first_open': (context) => freefire(),
         '/home': (context) => Home(),
+        '/test_mac': (context) => Home(),
+        '/test_safe': (context) => Home(),
+        '/test_imei': (context) => Home(),
       },
     );
   }

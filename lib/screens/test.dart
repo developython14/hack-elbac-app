@@ -23,7 +23,7 @@ class freefire extends StatefulWidget {
 class _MyAppState extends State<freefire> {
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
   Map<String, dynamic> _deviceData = <String, dynamic>{};
-  String ref = 'salam';
+  var ref = {};
 
   @override
   void initState() {
@@ -34,6 +34,13 @@ class _MyAppState extends State<freefire> {
   Future<void> initPlatformState() async {
     var deviceData = <String, dynamic>{};
     await AndroidMultipleIdentifier.requestPermission();
+    final deviceInfoPlugin = DeviceInfoPlugin();
+    final deviceInfo = await deviceInfoPlugin.deviceInfo;
+    final allInfo = deviceInfo.data;
+    print('chof');
+    setState(() {
+      ref = allInfo;
+    });
 
     try {
       if (kIsWeb) {
@@ -225,33 +232,10 @@ class _MyAppState extends State<freefire> {
                                     : '',
           ),
         ),
-        body: ListView(
-          children: _deviceData.keys.map(
-            (String property) {
-              return Row(
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      property,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                      child: Container(
-                    padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-                    child: Text(
-                      '${_deviceData[property]}',
-                      maxLines: 10,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  )),
-                ],
-              );
-            },
-          ).toList(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [Text('i chof data '), Text(ref.toString())],
+          ),
         ),
       ),
     );
