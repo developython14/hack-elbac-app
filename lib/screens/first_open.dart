@@ -39,16 +39,6 @@ class _startState extends State<start> {
                   Navigator.pushNamed(context, '/test_mac');
                 },
                 child: Text('to test_mac')),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/test_safe');
-                },
-                child: Text('to test_safe')),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/test_imei');
-                },
-                child: Text('to test_imei')),
           ],
         ),
       ),

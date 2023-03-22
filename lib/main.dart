@@ -60,8 +60,6 @@ class MyApp extends StatelessWidget {
         '/device_data': (context) => device_data(),
         '/home': (context) => Home(),
         '/test_mac': (context) => test_mac(),
-        '/test_safe': (context) => mysafe(),
-        '/test_imei': (context) => Home(),
       },
     );
   }
