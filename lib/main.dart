@@ -4,6 +4,7 @@ import 'package:get_mac/get_mac.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:hackelbac/providers/devices_info.dart';
 import 'package:hackelbac/screens/first_open.dart';
+import 'package:hackelbac/screens/safe.dart';
 import 'package:hackelbac/screens/test.dart';
 import 'package:provider/provider.dart';
 import 'providers/user_info.dart';
@@ -51,12 +52,14 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/first_open',
+      initialRoute: '/',
       routes: {
-        '/first_open': (context) => freefire(),
+        '/': (context) => freefire(),
+        '/general_data': (context) => freefire(),
+        '/device_data': (context) => freefire(),
         '/home': (context) => Home(),
         '/test_mac': (context) => Home(),
-        '/test_safe': (context) => Home(),
+        '/test_safe': (context) => mysafe(),
         '/test_imei': (context) => Home(),
       },
     );

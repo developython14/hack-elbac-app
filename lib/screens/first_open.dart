@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:hackelbac/providers/devices_info.dart';
 import 'package:provider/provider.dart';
@@ -9,29 +11,22 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
-class First_open extends StatelessWidget {
-  const First_open({Key? key}) : super(key: key);
+class start extends StatefulWidget {
+  const start({Key? key}) : super(key: key);
 
   @override
+  State<start> createState() => _startState();
+}
+
+class _startState extends State<start> {
+  @override
   Widget build(BuildContext context) {
-    if (context.watch<device_infos>().status == 'completed') {
-      return Scaffold(
-        body: Center(
-          child: ElevatedButton(
-            child: Text(context.watch<device_infos>().device_mac),
-            onPressed: () {
-              Navigator.pushNamed(context, '/home');
-            },
-          ),
-        ),
-      );
-    }
-    context.read<device_infos>().change_mac();
     return Scaffold(
       body: Center(
-        child: SpinKitRotatingCircle(
-          color: Colors.white,
-          size: 50.0,
+        child: Column(
+          children: [
+            Text('actions'),
+          ],
         ),
       ),
     );

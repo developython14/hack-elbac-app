@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:location_permissions/location_permissions.dart';
 import 'package:safe_device/safe_device.dart';
 
-class MyApp extends StatefulWidget {
+class mysafe extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<mysafe> {
   bool isJailBroken = false;
   bool canMockLocation = false;
   bool isRealDevice = true;
